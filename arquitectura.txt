@@ -1,0 +1,21 @@
+Arq BD
+
+Cliente -> Servidor
+
+* Centralizada
+
+1 server -> muchos clientes
+
+
+LAN - Red de area local
+
+Tx- Medios de transmision
+
+1 Alambrica
+	Par trenzada, coaxial, fibra optica
+2 Inalambrica
+	Packet radio, IR, satelital, wifi
+
+* Distribuida
+	
+* Paralela
