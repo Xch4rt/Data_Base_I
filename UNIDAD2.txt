@@ -1,0 +1,19 @@
+Implementacion de BD
+
+Modelo de datos
+
+metodo de datos 
+modelo de datos
+
+MODELO CONCEPTUAL
+
+	DER -> Diagrama Entidad Relacion
+
+MODELO DE IMPLEMENTACION
+	JERARQUICO, RED, ORIENTADO A OBJETOS, RELACIONAL
+MODELO FISICO
+
+
+
+MOD4ELADO -> DISEÑO -> IMPLEMENTACION
+	
