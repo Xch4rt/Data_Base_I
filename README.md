@@ -1,5 +1,8 @@
 # Bases de Datos I
 
+[1. Variables](#variables).
+[2. Consultas](#consultas).
+
 ## Variables
 Tipos de variables numericas exactas:
 
