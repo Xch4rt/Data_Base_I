@@ -82,16 +82,16 @@ Ejemplo
 `
 SELECT * FROM Alumnos where Nombre="Pablo"
 `
-#Arquitectura
+# Arquitectura
 
-##Arquitectura Centralizada
+## Arquitectura Centralizada
 
 Una base de datos centralizada es aquella que esta totalmente en un solo
 lugar fisico, es decir que esta almacenada en una sola maquina, en una sola CPU
 en la cual los usuarios trabajan en terminales que solo muestran resultados-
 
 
-###Caracteristicas
+### Caracteristicas
 
 * Se almacena completamente en una localidad central
 * No posee multiples elementos de procesamiento ni mecanismos de intercomunicacion
@@ -99,24 +99,24 @@ como las bases de datos distribuidas
 * Los componentes de estas son : **Los datos**, **Software de gestion** y **dispositivos de almacenamiento secundarios**
 * El problema de seguridad es facil de manejar en estas.
 
-###Ventajas:
+### Ventajas:
 * Se evita la redundancia
 * Se evita la inconsistencia
 * Pueden aplicarse restricciones de seguridad
 * Puede conservarse la integridad
 * El procesamiento de los datos ofrece un mejor rendimiento y resulta mas confiable que los sistemas distribuidos
 
-###Desventajas
+### Desventajas
 * Si el sistema de base de datos falla, se pierde la disponibilidad y procesamiento de la informacion que posee el sistema
 * Dificil sincronizacion para su recuperacion
 * Las cargas de trabajo no se pueden difundir entre varias computadoras
 
-##Arquitecturas Paralelas
+## Arquitecturas Paralelas
 
 La particion de la BD para poder procesar de forma paralela en distintos discos y con distintos procesadores una sola operacion sobre la base de datos.
 El paralelismo se usa para mejorar la velocidad en la ejecucion de consultas. 
 
-###Existen 4 arquitecturas de sistemas paralelos
+### Existen 4 arquitecturas de sistemas paralelos
 * De memoria compartida
 * De discos duros compartidos
 * Sin compartimiento
