@@ -2,7 +2,7 @@
 
 [1. Variables](#variables).
 [2. Consultas](#consultas).
-
+[4. Arquitectura](#arquitectura).
 ## Variables
 Tipos de variables numericas exactas:
 
@@ -82,3 +82,67 @@ Ejemplo
 `
 SELECT * FROM Alumnos where Nombre="Pablo"
 `
+#Arquitectura
+
+##Arquitectura Centralizada
+
+Una base de datos centralizada es aquella que esta totalmente en un solo
+lugar fisico, es decir que esta almacenada en una sola maquina, en una sola CPU
+en la cual los usuarios trabajan en terminales que solo muestran resultados-
+
+
+###Caracteristicas
+
+* Se almacena completamente en una localidad central
+* No posee multiples elementos de procesamiento ni mecanismos de intercomunicacion
+como las bases de datos distribuidas
+* Los componentes de estas son : **Los datos**, **Software de gestion** y **dispositivos de almacenamiento secundarios**
+* El problema de seguridad es facil de manejar en estas.
+
+###Ventajas:
+* Se evita la redundancia
+* Se evita la inconsistencia
+* Pueden aplicarse restricciones de seguridad
+* Puede conservarse la integridad
+* El procesamiento de los datos ofrece un mejor rendimiento y resulta mas confiable que los sistemas distribuidos
+
+###Desventajas
+* Si el sistema de base de datos falla, se pierde la disponibilidad y procesamiento de la informacion que posee el sistema
+* Dificil sincronizacion para su recuperacion
+* Las cargas de trabajo no se pueden difundir entre varias computadoras
+
+##Arquitecturas Paralelas
+
+La particion de la BD para poder procesar de forma paralela en distintos discos y con distintos procesadores una sola operacion sobre la base de datos.
+El paralelismo se usa para mejorar la velocidad en la ejecucion de consultas. 
+
+###Existen 4 arquitecturas de sistemas paralelos
+* De memoria compartida
+* De discos duros compartidos
+* Sin compartimiento
+* Jerarquica
+
+## Cliente/Servidor
+Primero identifiquemos lo que es cliente y servidor:
+
+Conocemos como cliente al programa ejecutable que participa activamente en el establecimiento de las conexiones. Envia peticiones al servidor y se queda esperando por una respuesta.
+
+Servidor es un programa que ofrece un servicio que se puede obtener en una red. Acepta la peticion desde la red, realiza el servicio y devuelve el resultado al solicitante. Al ser posible implantarlo como aplicaciones de programas, puede ejecutarse en cualquier sistema donde existe TCP/IP y junto con otos programas de aplicacion
+
+*Tecnologia Cliente/Servidor*
+Es el procesamiento cooperativo de la informacion por medio de un conjunto de procesadores, en el cual multiples clientes, distribuidos geograficamente solicitan requerimientos a uno o mas servidores centrales.
+
+*MODELO*
+
+El cliente envia un mensaje solicitando un determinado servicio a un servidor, y este envia uno o varios mensajes con la respuesta. En un sistema distribuido cada maquina puede cumplir el rol de seridor para algunas tareas y el rol de cliente para otras
+
+**Niveles de modelos**
+
+**Nivel de usuario**
+Los componentes del nivel de usuario, proporcionan la interfaz visual que los clientes utilizarán para ver la información y los datos. 
+
+**Nivel de negocios**
+Como los servicios de usuario no pueden contactar directamente con el nivel de servicios de datos, es responsabilidad de los servicios de negocio hacer de puente entre estos.
+
+**Nivel de datos**
+El nivel de datos se encarga de las típicas tareas que realizamos con los datos: Inserción, modificación, consulta y borrado (CRUD). 
