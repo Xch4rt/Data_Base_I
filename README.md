@@ -1,7 +1,7 @@
 # Bases de Datos I
 
 [1. Variables](#variables).
-[2. Consultas](#consultas).
+[2. Consultas y Funciones](#consultas).
 [4. Arquitectura](#arquitectura).
 ## Variables
 Tipos de variables numericas exactas:
@@ -40,7 +40,7 @@ Cadenas binarias
 
 
 
-## Consultas
+## Consultas y Funciones
 
 ### Consulta Select
 `SELECT ListaColumnas FROM Nombre_Tabla`
@@ -82,6 +82,49 @@ Ejemplo
 `
 SELECT * FROM Alumnos where Nombre="Pablo"
 `
+### Consulta INSERT INTO
+ 
+La instrucción INSERT INTO se utiliza para insertar nuevos registros en una tabla.
+
+**1. Especifique tanto los nombres de las columnas como los valores que se insertarán:**
+<br/>
+Sintaxis
+`
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...)
+`
+<br/>
+**2. Si agrega valores para todas las columnas de la tabla, no es necesario que especifique los nombres de las columnas en la consulta SQL. Sin embargo, asegúrese de que el orden de los valores esté en el mismo orden que las columnas de la tabla. Aquí, la sintaxis INSERT INTO sería la siguiente:**
+`
+INSERT INTO table_name 
+VALUES (value1, value2, value3, ...)
+`
+<br/>
+## Ejemplo
+
+|CustomerID 	|CustomerName 	|ContactName 	|Address 	|City 	|PostalCode 	|Country |
+|-------------|---------------|-------------|---------|-------|-------------|--------|
+|89 	        |White Clover Markets 	|Karl Jablonski 	|305 - 14th Ave. S. Suite 3B 	|Seattle 	|98128 	|USA
+|90           |Wilman Kala 	|Matti Karttunen 	|Keskuskatu 45 	|Helsinki 	|21240 	|Finland
+|91           |Wolski 	|Zbyszek 	|ul. Filtrowa 68 	|Walla 	|01-012 	|Poland
+
+
+`
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+`
+<br/>
+`
+VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+`
+<br/>
+|CustomerID 	|CustomerName 	|ContactName 	|Address 	|City 	|PostalCode 	|Country |
+|-------------|---------------|-------------|---------|-------|-------------|--------|
+|89 	        |White Clover Markets 	|Karl Jablonski 	|305 - 14th Ave. S. Suite 3B 	|Seattle 	|98128 	|USA |
+|90           |Wilman Kala 	|Matti Karttunen 	|Keskuskatu 45 	|Helsinki 	|21240 	|Finland |
+|91           |Wolski 	|Zbyszek 	|ul. Filtrowa 68 	|Walla 	|01-012 	|Poland |
+|92           |Cardinal |Tom B. Erichsen |Skagen 21 |Stavanger |4006 |Norway |
+
+
 # Arquitectura
 
 ## Arquitectura Centralizada
