@@ -221,6 +221,8 @@ Un valor sencillo para cada tupla (atomico) significa que no se puede dividir
 
 Ejemplificando
 <br/>
+Esta tabla no cumple con la primera forma normal 
+<br/>
 |IdPedido	|FechaPedido	|IdCliente	|NombreCompañia	|IdEmpleado	|Nombre	|FechaEnvio	|idproducto	|nombreProducto	|preciounidad	|cantidad	|descuento|
 |---------|------------|----------|---------------|-----------|-------|-----------|-----------|---------------|-------------|---------|---------|
 |10248	   |4/8/1994	   |WILMK	    |Wilman Kala	   |          5|Steven	|16/8/1994	 |11	        |Queso Cabrales	|14	          |12	      |0        |
@@ -238,6 +240,22 @@ Ejemplificando
 |10252	|9/8/1994	|SUPRD	|Suprêmes délices	|4	|Margaret	|11/8/1994	|10252	|33	|Queso de cabra	|2	|25	|0|
 |10252	|9/8/1994	|SUPRD	|Suprêmes délices	|4	|Margaret	|11/8/1994	|10252	|60	|Camembert Pierrot	|27	|40	|0|
 |10253	|10/8/1994	|HANAR	|Hanari Carnes	|3	|Janet	|16/8/1994	|10253	|31	|Queso gorgonzola Telino	|10	|20	|0|
+
+<br/>
+<br/>
+Esta tabla si cumple con la primera forma normal
+<br/>
+<br/>
+
+|IdPedido	|FechaPedido	|IdCliente	|NombreCompañia	|IdEmpleado	|Nombre	|FechaEnvio|
+|---------|------------|----------|---------------|-----------|-------|----------|
+|10248	|4/8/1994	|WILMK	|Wilman Kala	|5	|Steven	|16/8/1994|
+|10249	|5/8/1994	|TOMSP	|Toms Spezialitäten	|6	|Michael	|10/8/1994|
+|10250	|8/8/1994	|HANAR	|Hanari Carnes	|4	|Margaret	|12/8/1994|
+|10251	|8/8/1994	|VICTE	|Victuailles en stock	|3	|Janet	|15/8/1994|
+|10252	|9/8/1994	|SUPRD	|Suprêmes délices	|4	|Margaret	|11/8/1994|
+|10253	|10/8/1994	|HANAR	|Hanari Carnes	|3	|Janet	|16/8/1994|
+
 
 
 Explicacion de porque viola la primera norma: Porque los clientes pueden llevar varios pedidos y no se deberia de repetir un registro por cada producto que un cliente lleve
