@@ -179,6 +179,7 @@ Es el procesamiento cooperativo de la informacion por medio de un conjunto de pr
 
 El cliente envia un mensaje solicitando un determinado servicio a un servidor, y este envia uno o varios mensajes con la respuesta. En un sistema distribuido cada maquina puede cumplir el rol de seridor para algunas tareas y el rol de cliente para otras
 
+
 **Niveles de modelos**
 
 **Nivel de usuario**
@@ -189,3 +190,28 @@ Como los servicios de usuario no pueden contactar directamente con el nivel de s
 
 **Nivel de datos**
 El nivel de datos se encarga de las típicas tareas que realizamos con los datos: Inserción, modificación, consulta y borrado (CRUD). 
+
+
+
+***Modelo Relacional***
+
+Definimos el Modelo Relacional consiste en un conjunto de relaciones( tablas ), relacion de datos compuestas por filas, o tuplas, y columnas o campos.
+
+###Clave Primaria
+Es el atributo que me permite identificar al registro, la clave primaria puede ser sencilla o compuesta
+* Clave primaria sencilla -> Hace referencia a una sola tabla
+* Clave compuesta -> Hace referencia a 2 tablas
+* Llave foranea -> Es la referencia de una clave primaria a otra tabla
+* Relaciones -> Puede haber relaciones (1,1), (1,m), (m,1) (tercera tabla)
+
+
+***Normalizacion***
+¿Que es?
+<br/>
+Conjunto de reglas que debe cumplir un modelo relacional para que su diseño sea aceptable.
+
+##Normalizacion
+
+1. Primera forma normal: Los atributos de una tabla deben ser atomicos y poseer una clave primaria (cada atributo debe contener un valor sencillo)
+2. Segunda forma normal: Debe estar en primera forma normal y no podran existir dependencias parciales por la clave primaria
+3. Tercera forma norma: Debera estar en segunda forma normal y no podran existir dependecias transitivas
