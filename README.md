@@ -215,3 +215,31 @@ Conjunto de reglas que debe cumplir un modelo relacional para que su diseño sea
 1. Primera forma normal: Los atributos de una tabla deben ser atomicos y poseer una clave primaria (cada atributo debe contener un valor sencillo)
 2. Segunda forma normal: Debe estar en primera forma normal y no podran existir dependencias parciales por la clave primaria
 3. Tercera forma norma: Debera estar en segunda forma normal y no podran existir dependecias transitivas
+
+
+Un valor sencillo para cada tupla (atomico) significa que no se puede dividir
+
+Ejemplificando
+<br/>
+|IdPedido	|FechaPedido	|IdCliente	|NombreCompañia	|IdEmpleado	|Nombre	|FechaEnvio	|idproducto	|nombreProducto	|preciounidad	|cantidad	|descuento|
+|---------|------------|----------|---------------|-----------|-------|-----------|-----------|---------------|-------------|---------|---------|
+|10248	   |4/8/1994	   |WILMK	    |Wilman Kala	   |          5|Steven	|16/8/1994	 |11	        |Queso Cabrales	|14	          |12	      |0        |
+|10248	|4/8/1994	|WILMK	|Wilman Kala	|5	|Steven	|16/8/1994	|42	|Tallarines de Singapur	|10	|10	|0|
+|10248	|4/8/1994	|WILMK	|Wilman Kala	|5	|Steven	|16/8/1994	|72	|Queso Mozzarella Giovanni	|35	|5	|0|
+|10249	|5/8/1994	|TOMSP	|Toms Spezialitäten	|6	|Michael	|10/8/1994	|10249	|14	|Cuajada de judías	|19	|9	|0|
+|10249	|5/8/1994	|TOMSP	|Toms Spezialitäten	|6	|Michael	|10/8/1994	|10249	|51	|Manzanas secas Manjimup	|42	|40	|0|
+|10250	|8/8/1994	|HANAR	|Hanari Carnes	|4	|Margaret	|12/8/1994	|10250	|41	|Crema de almejas estilo Nueva Inglaterra	|8	|10	|0|
+|10250	|8/8/1994	|HANAR	|Hanari Carnes	|4	|Margaret	|12/8/1994	|10250	|51	|Manzanas secas Manjimup	|42	35	|0|
+|10250	|8/8/1994	|HANAR	|Hanari Carnes	|4	|Margaret	|12/8/1994	|10250	|65	|Salsa de pimiento picante de Luisiana	|17	|15	|0|
+|10251	|8/8/1994	|VICTE	|Victuailles en stock	|3	|Janet	|15/8/1994	|10251	|22	|Pan de centeno crujiente estilo Gustaf's	|17	|6	|0|
+|10251	|8/8/1994	|VICTE	|Victuailles en stock	|3	|Janet	|15/8/1994	 |10251	|57	|Raviolis Angelo	|16	|15	|0|
+|10251	|8/8/1994	|VICTE	|Victuailles en stock	|3	|Janet	|15/8/1994	 |10251	|65	|Salsa de pimiento picante de Luisiana	|17	|20	|0|
+|10252	|9/8/1994	|SUPRD	|Suprêmes délices	|4	|Margaret	|11/8/1994	|10252	|20	|Mermelada de Sir Rodney's	|65	|40	|0|
+|10252	|9/8/1994	|SUPRD	|Suprêmes délices	|4	|Margaret	|11/8/1994	|10252	|33	|Queso de cabra	|2	|25	|0|
+|10252	|9/8/1994	|SUPRD	|Suprêmes délices	|4	|Margaret	|11/8/1994	|10252	|60	|Camembert Pierrot	|27	|40	|0|
+|10253	|10/8/1994	|HANAR	|Hanari Carnes	|3	|Janet	|16/8/1994	|10253	|31	|Queso gorgonzola Telino	|10	|20	|0|
+
+
+Explicacion de porque viola la primera norma: Porque los clientes pueden llevar varios pedidos y no se deberia de repetir un registro por cada producto que un cliente lleve
+
+Clave compuesta: Es cuando esta se conforma por dos atributos o mas
