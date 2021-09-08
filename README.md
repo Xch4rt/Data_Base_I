@@ -1,8 +1,9 @@
 # Bases de Datos I
 
-[1. Variables](#variables).
-[2. Consultas y Funciones](#consultas).
-[4. Arquitectura](#arquitectura).
+[1. Variables](#variables).<br/>
+[2. Consultas y Funciones](#consultas).<br/>
+[3. Modelo Relacional](#modelo_relacional)<br/>
+[4. Arquitectura](#arquitectura).<br/>
 ## Variables
 Tipos de variables numericas exactas:
 
@@ -40,8 +41,7 @@ Cadenas binarias
 
 
 
-## Consultas y Funciones
-
+## Consultas
 ### Consulta Select
 `SELECT ListaColumnas FROM Nombre_Tabla`
 
@@ -192,12 +192,12 @@ Como los servicios de usuario no pueden contactar directamente con el nivel de s
 El nivel de datos se encarga de las típicas tareas que realizamos con los datos: Inserción, modificación, consulta y borrado (CRUD). 
 
 
-
+# Modelo_Relacional
 ***Modelo Relacional***
 
 Definimos el Modelo Relacional consiste en un conjunto de relaciones( tablas ), relacion de datos compuestas por filas, o tuplas, y columnas o campos.
 
-###Clave Primaria
+### Clave Primaria
 Es el atributo que me permite identificar al registro, la clave primaria puede ser sencilla o compuesta
 * Clave primaria sencilla -> Hace referencia a una sola tabla
 * Clave compuesta -> Hace referencia a 2 tablas
@@ -210,7 +210,7 @@ Es el atributo que me permite identificar al registro, la clave primaria puede s
 <br/>
 Conjunto de reglas que debe cumplir un modelo relacional para que su diseño sea aceptable.
 
-##Normalizacion
+### Normalizacion
 
 1. Primera forma normal: Los atributos de una tabla deben ser atomicos y poseer una clave primaria (cada atributo debe contener un valor sencillo)
 2. Segunda forma normal: Debe estar en primera forma normal y no podran existir dependencias parciales por la clave primaria
