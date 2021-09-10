@@ -208,14 +208,18 @@ Es el atributo que me permite identificar al registro, la clave primaria puede s
 ***Normalizacion***
 ¿Que es?
 <br/>
-Conjunto de reglas que debe cumplir un modelo relacional para que su diseño sea aceptable.
+La normalizacion es el proceso de simplificacion de datos y que nos ayuda a tener almacenado con el menor espacio posible, eliminar datos repetidos, eliminar errores logicos y poder tener datos ordenados.
 
 ### Normalizacion
-
+<br/>
 1. Primera forma normal: Los atributos de una tabla deben ser atomicos y poseer una clave primaria (cada atributo debe contener un valor sencillo)
+<br/>
 2. Segunda forma normal: Debe estar en primera forma normal y no podran existir dependencias parciales por la clave primaria
+<br/>
 3. Tercera forma norma: Debera estar en segunda forma normal y no podran existir dependecias transitivas
+<br/>
 
+Con la tercera forma ya tenemos una base de datos bien estructurada y optimizada.
 
 Un valor sencillo para cada tupla (atomico) significa que no se puede dividir
 
