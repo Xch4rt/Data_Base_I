@@ -120,3 +120,51 @@ select ProductID, ProductName
 from Products
 where ProductName like 'C%'
 ```
+
+### Top
+Devuelve un determinado numero de registros. Esta sentencia se guia por la ordenacion
+>Select top **n** from tabla
+
+## Donde **n** es la cantidad de registros que queremos
+```
+select top 3 *
+from Products
+```
+```
+select top 15 OrderId, ProductID
+from Order_Details
+oder by OrderId asc
+```
+
+#### INSERT
+Nos permite insertar nuevos registros en las tablas.
+Sintaxis:
+* Para campos especificos
+>insert into Nombre_Tabla(campo1, campo2, campo3,...)
+>values(valor1, valor2, valor3,...)
+
+* Para todos los campos
+>insert into Nombre_Tabla
+>values(valor1, valor2, valor3,...)
+
+#### UPDATE
+Modifica o actualiza los valores de uno o mas campos seleccionados
+```
+update Products
+set UnitsInStock = 50
+where ProductID = 1
+```
+
+#### DELETE
+Como bien su nombre lo dice, por intuicion esta sentencia nos sirve para eliminar los campos de una tabla especifica
+```
+delete 
+from Customers
+where OrderID = 10255
+```
+Eliminar varios
+```
+delete 
+from Order_Details
+where ProductID in (1,2,5,3,9,12)
+```
