@@ -1,0 +1,40 @@
+-- EXEC TOP_SALES_BY_MONTH @YEAR=1997
+
+CREATE /*ALTER*/ PROCEDURE TOP_SALES_BY_MONTH
+	@YEAR INT
+AS
+	-- Se utiliza variable de tipo tabla, para almacenar resultados del año
+	DECLARE @PRODUCTOS_VENDIDOS_POR_MES TABLE (MES INT, [NOMBRE MES] NVARCHAR(20), PRODUCTO NVARCHAR(100), CANTIDAD FLOAT);
+
+	-- Ejecución de consulta principal
+	INSERT INTO @PRODUCTOS_VENDIDOS_POR_MES
+	SELECT
+		MONTH(Orden.OrderDate) AS [MES],
+		FORMAT(Orden.OrderDate, 'MMMM') AS [NOMBRE MES],
+		Producto.ProductName AS PRODUCTO,
+		SUM(Detalle.Quantity) AS CANTIDAD
+	FROM [Order Details] Detalle
+	INNER JOIN [Orders] Orden ON Orden.OrderID = Detalle.OrderID
+	INNER JOIN Products Producto ON Detalle.ProductID = Producto.ProductID
+
+	WHERE
+		YEAR(Orden.OrderDate) = @YEAR
+
+	GROUP BY Producto.ProductName, MONTH(Orden.OrderDate), FORMAT(Orden.OrderDate, 'MMMM')
+
+	-- Se obtiene el primero de cada mes ordenado por el mayor numero vendido
+	SELECT 
+		TOP_VENTAS.[NOMBRE MES],
+		TOP_VENTAS.PRODUCTO,
+		TOP_VENTAS.CANTIDAD
+
+	FROM @PRODUCTOS_VENDIDOS_POR_MES AS TOP_VENTAS
+	WHERE
+		[PRODUCTO] = (
+			SELECT TOP 1 PRODUCTO
+			FROM @PRODUCTOS_VENDIDOS_POR_MES AS VENTAS
+			WHERE VENTAS.[NOMBRE MES] = TOP_VENTAS.[NOMBRE MES]
+			ORDER BY VENTAS.CANTIDAD DESC
+		)
+	ORDER BY MES
+GO
